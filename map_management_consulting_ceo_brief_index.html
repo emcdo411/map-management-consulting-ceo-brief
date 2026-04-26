@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAP Management Consulting CEO Brief | AI Governance Stress Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --ink: #22282b;
+      --ink-2: #354146;
+      --muted: #6c777b;
+      --paper: #f6f2ea;
+      --paper-2: #ece6db;
+      --paper-3: #ded7ca;
+      --panel: rgba(246, 242, 234, 0.84);
+      --dark: #252b2e;
+      --dark-2: #171c1e;
+      --line: rgba(37, 43, 46, 0.12);
+      --peri: #8e9fd5;
+      --peri-2: #6679b7;
+      --gold: #b8962e;
+      --amber: #d4812a;
+      --red: #b84335;
+      --green: #2a776d;
+      --shadow: 0 22px 70px rgba(23, 28, 30, 0.14);
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% -5%, rgba(142, 159, 213, 0.28), transparent 34rem),
+        radial-gradient(circle at 92% 8%, rgba(184, 150, 46, 0.18), transparent 32rem),
+        linear-gradient(135deg, var(--paper), var(--paper-2));
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.58;
+    }
+
+    a { color: inherit; }
+    .shell { max-width: 1240px; margin: 0 auto; padding: 0 22px; }
+    .topline {
+      background: var(--dark-2);
+      color: rgba(246, 242, 234, 0.76);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(142, 159, 213, 0.28);
+    }
+    .topline .shell { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+    header.hero {
+      background:
+        linear-gradient(135deg, rgba(37, 43, 46, 0.98), rgba(23, 28, 30, 0.96)),
+        repeating-linear-gradient(90deg, rgba(142,159,213,0.08) 0 1px, transparent 1px 46px);
+      color: var(--paper);
+      border-bottom: 4px solid var(--peri);
+      box-shadow: 0 18px 48px rgba(23, 28, 30, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 82% 28%, rgba(142, 159, 213, 0.22), transparent 26rem);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 32px; padding: 54px 0 34px; align-items: end; }
+    .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; color: var(--peri); text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-family: var(--serif); font-size: clamp(44px, 8vw, 92px); line-height: 0.92; margin: 0 0 16px; font-weight: 400; letter-spacing: -0.035em; }
+    .hero-copy { max-width: 760px; color: rgba(246, 242, 234, 0.72); font-size: 16px; }
+    .hero-copy strong { color: var(--paper); }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 38px; padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(142,159,213,0.42);
+      color: var(--paper); text-decoration: none; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(142,159,213,0.12); cursor: pointer;
+    }
+    .btn.primary { background: var(--peri); color: var(--dark); border-color: var(--peri); font-weight: 700; }
+    .verdict-card {
+      background: rgba(246, 242, 234, 0.08);
+      border: 1px solid rgba(246, 242, 234, 0.16);
+      border-radius: 26px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+    .verdict-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--peri); text-transform: uppercase; }
+    .verdict { font-family: var(--serif); font-size: 48px; color: var(--amber); line-height: 1; margin: 10px 0 8px; }
+    .verdict-card p { margin: 0; color: rgba(246, 242, 234, 0.66); font-size: 13px; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+    .mini { border: 1px solid rgba(246,242,234,0.12); background: rgba(0,0,0,0.12); border-radius: 14px; padding: 12px; }
+    .mini b { display: block; font-family: var(--serif); font-size: 24px; line-height: 1; color: var(--paper); }
+    .mini span { display: block; font-family: var(--mono); font-size: 8px; text-transform: uppercase; color: rgba(246,242,234,0.48); margin-top: 6px; }
+
+    .nav-wrap { position: sticky; top: 0; z-index: 20; background: rgba(236, 230, 219, 0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav.tabs { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0; }
+    .tab {
+      white-space: nowrap; border: 1px solid var(--line); background: rgba(246,242,234,0.75); color: var(--muted);
+      border-radius: 999px; padding: 8px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+    }
+    .tab.active { background: var(--dark); color: var(--paper); border-color: var(--dark); }
+
+    main { padding: 34px 0 58px; }
+    section.panel { display: none; animation: rise 260ms ease both; }
+    section.panel.active { display: block; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-head { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 14px; margin: 0 0 20px; }
+    .section-head span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--peri-2); text-transform: uppercase; font-weight: 700; }
+    .section-head:after { content: ''; height: 1px; background: var(--line); }
+
+    .grid { display: grid; gap: 16px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(37,43,46,0.12);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 18px 52px rgba(23, 28, 30, 0.08);
+    }
+    .card.dark { background: var(--dark); color: var(--paper); border-color: rgba(142,159,213,0.28); }
+    .card h2, .card h3 { font-family: var(--serif); font-weight: 400; line-height: 1.06; margin: 0 0 10px; }
+    .card h2 { font-size: clamp(30px, 4.6vw, 58px); letter-spacing: -0.025em; }
+    .card h3 { font-size: 25px; }
+    .card p { margin: 0 0 12px; color: var(--muted); }
+    .card.dark p { color: rgba(246,242,234,0.72); }
+    .card p:last-child { margin-bottom: 0; }
+    .tag { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 8px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 700; }
+    .tag.red { background: rgba(184,67,53,0.12); color: var(--red); }
+    .tag.amber { background: rgba(212,129,42,0.14); color: var(--amber); }
+    .tag.blue { background: rgba(142,159,213,0.18); color: var(--peri-2); }
+    .tag.green { background: rgba(42,119,109,0.13); color: var(--green); }
+
+    .metric { border-left: 4px solid var(--peri); }
+    .metric.red { border-left-color: var(--red); }
+    .metric.amber { border-left-color: var(--amber); }
+    .metric.green { border-left-color: var(--green); }
+    .metric .label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+    .metric .value { font-family: var(--serif); font-size: 44px; line-height: 1; margin: 8px 0 6px; }
+    .metric .sub { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+    .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; }
+    .insight-list { display: grid; gap: 10px; margin-top: 12px; }
+    .insight { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: rgba(246,242,234,0.52); }
+    .insight i { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--dark); color: var(--paper); font-style: normal; font-family: var(--mono); font-size: 11px; font-weight: 700; }
+    .insight b { display: block; margin-bottom: 3px; }
+    .insight span { color: var(--muted); font-size: 13px; }
+
+    .chart-box { min-height: 330px; position: relative; }
+    .chart-title { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 12px; }
+    canvas { width: 100% !important; height: 280px !important; }
+
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; font-family: var(--mono); font-size: 11px; }
+    th { background: var(--dark); color: var(--paper); text-align: left; padding: 12px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 9px; }
+    td { padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); background: rgba(246,242,234,0.68); }
+    tr:nth-child(even) td { background: rgba(236,230,219,0.76); }
+    td strong { color: var(--ink); }
+
+    .timeline { position: relative; display: grid; gap: 12px; }
+    .week { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 16px; background: rgba(246,242,234,0.7); border: 1px solid var(--line); border-radius: 20px; }
+    .week b { font-family: var(--mono); font-size: 10px; color: var(--peri-2); text-transform: uppercase; letter-spacing: 0.13em; }
+    .week h4 { margin: 0 0 4px; font-size: 16px; }
+    .week p { margin: 0; font-size: 13px; color: var(--muted); }
+
+    .footer {
+      background: var(--dark-2);
+      color: rgba(246,242,234,0.56);
+      padding: 22px 0;
+      font-family: var(--mono);
+      font-size: 10px;
+      border-top: 3px solid var(--peri);
+    }
+    .footer .shell { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .hero-inner, .split, .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .week { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .nav-wrap, .hero-actions, .topline { display: none; }
+      body { background: white; }
+      section.panel { display: block !important; page-break-inside: avoid; }
+      .card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="shell"><span>Pre-Engagement Intelligence Brief</span><span>AI Adoption Architect v6.6 × MOC v4.7 × Fractional CXO Lens</span></div></div>
+
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div>
+        <div class="eyebrow">MAP Management Consulting CEO Brief</div>
+        <h1>AI Governance Stress Test</h1>
+        <p class="hero-copy">This brief evaluates whether MAP's digital and AI positioning is connected to a real governance, decision routing, and accountability layer. The core finding is simple: <strong>MAP's Vital Factors® system is strong, but the public AI layer appears under-governed.</strong></p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="switchTab('entry')">View Entry Point</button>
+          <button class="btn" onclick="switchTab('governance')">Governance Scorecard</button>
+          <button class="btn" onclick="window.print()">Print Brief</button>
+        </div>
+      </div>
+      <aside class="verdict-card">
+        <div class="verdict-label">Overall HCDG Verdict</div>
+        <div class="verdict">Conditional</div>
+        <p>AI should not be optimized until the workflow, ownership model, and decision validation layer are proven.</p>
+        <div class="mini-grid">
+          <div class="mini"><b>4.0</b><span>Gov score / 15</span></div>
+          <div class="mini"><b>High</b><span>AI theater risk</span></div>
+          <div class="mini"><b>30D</b><span>Proof sprint</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="nav-wrap">
+    <div class="shell">
+      <nav class="tabs" aria-label="Brief sections">
+        <button class="tab active" data-tab="overview" onclick="switchTab('overview')">Executive Summary</button>
+        <button class="tab" data-tab="readiness" onclick="switchTab('readiness')">AI Readiness</button>
+        <button class="tab" data-tab="competitors" onclick="switchTab('competitors')">Competitors</button>
+        <button class="tab" data-tab="governance" onclick="switchTab('governance')">Governance</button>
+        <button class="tab" data-tab="theater" onclick="switchTab('theater')">AI Theater</button>
+        <button class="tab" data-tab="entry" onclick="switchTab('entry')">Entry Point</button>
+        <button class="tab" data-tab="sources" onclick="switchTab('sources')">Sources</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section id="overview" class="panel active">
+      <div class="section-head"><span>Executive Summary</span></div>
+      <div class="split">
+        <article class="card dark">
+          <span class="tag amber">Core finding</span>
+          <h2>MAP has a real accountability asset, but its public AI layer looks disconnected from decision ownership.</h2>
+          <p>The strongest public asset is not the app. It is MAP's long-standing accountability methodology. The risk is that AI becomes a marketing enhancement rather than a governed operating system.</p>
+          <p>The consulting entry point is not to sell more AI. It is to install a decision governance layer between MAP's digital tools and the human accountability rhythm that already creates value.</p>
+        </article>
+        <div class="grid cols-2">
+          <div class="card metric red"><div class="label">AI Governance</div><div class="value">1.5</div><div class="sub">No public framework found</div></div>
+          <div class="card metric red"><div class="label">Ops Sponsor</div><div class="value">1.0</div><div class="sub">No named AI owner found</div></div>
+          <div class="card metric amber"><div class="label">Decision Layer</div><div class="value">1.5</div><div class="sub">Insight path unclear</div></div>
+          <div class="card metric amber"><div class="label">DVL Class</div><div class="value">Low</div><div class="sub">Decision velocity not proven</div></div>
+        </div>
+      </div>
+      <div class="grid cols-3" style="margin-top:16px">
+        <div class="card"><h3>What is real</h3><p>Vital Factors® appears to be a behavioral accountability system with repeatable executive coaching logic. That is a legitimate foundation for AI governance.</p></div>
+        <div class="card"><h3>What is unproven</h3><p>The public footprint does not show how MAP App or MAP University outputs become owned, audited, and verified decisions.</p></div>
+        <div class="card"><h3>Where you enter</h3><p>Position around AI adoption failure, decision routing, and accountability velocity. Do not position as a tool builder.</p></div>
+      </div>
+    </section>
+
+    <section id="readiness" class="panel">
+      <div class="section-head"><span>AI Readiness</span></div>
+      <div class="grid cols-2">
+        <div class="card chart-box"><div class="chart-title">AI Adoption Maturity Index</div><canvas id="readinessChart"></canvas></div>
+        <div class="card chart-box"><div class="chart-title">AI ROI Distribution Estimate</div><canvas id="roiChart"></canvas></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3>Readiness interpretation</h3>
+        <p>MAP appears to be in a marketing-positive but governance-light position. This creates an opening for an executive-level intervention: determine which AI use cases should exist, which should be redesigned, and which should be blocked until ownership is clear.</p>
+      </div>
+    </section>
+
+    <section id="competitors" class="panel">
+      <div class="section-head"><span>Competitor Intelligence</span></div>
+      <div class="grid cols-3">
+        <div class="card"><span class="tag amber">Watch</span><h3>Vistage</h3><p>Stronger public AI content footprint. Governance appears discussed as advisory content rather than a clearly documented internal operating layer.</p></div>
+        <div class="card"><span class="tag green">Closest rival</span><h3>EOS Worldwide</h3><p>Closest to MAP's operating logic because EOS is already built around ownership, cadence, issues, and accountability.</p></div>
+        <div class="card"><span class="tag blue">Scaled brand</span><h3>Franklin Covey</h3><p>Large digital learning footprint, but the AI surface looks more like content delivery enhancement than decision governance.</p></div>
+      </div>
+      <div class="card chart-box" style="margin-top:16px"><div class="chart-title">Competitive Radar</div><canvas id="radarChart"></canvas></div>
+    </section>
+
+    <section id="governance" class="panel">
+      <div class="section-head"><span>Governance Scorecard</span></div>
+      <div class="card chart-box"><div class="chart-title">Governance Maturity Comparison</div><canvas id="govChart"></canvas></div>
+      <div class="card" style="margin-top:16px; overflow-x:auto">
+        <table>
+          <thead><tr><th>Firm</th><th>AI Gov</th><th>Ops Sponsor</th><th>Decision Layer</th><th>Total</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr><td><strong>MAP</strong></td><td>1.5</td><td>1.0</td><td>1.5</td><td><strong>4.0 / 15</strong></td><td><span class="tag red">Critical gap</span></td></tr>
+            <tr><td><strong>Vistage</strong></td><td>2.5</td><td>2.0</td><td>2.0</td><td><strong>6.5 / 15</strong></td><td><span class="tag amber">Developing</span></td></tr>
+            <tr><td><strong>EOS Worldwide</strong></td><td>2.0</td><td>2.5</td><td>3.0</td><td><strong>7.5 / 15</strong></td><td><span class="tag green">Closest</span></td></tr>
+            <tr><td><strong>Franklin Covey</strong></td><td>2.5</td><td>1.5</td><td>2.0</td><td><strong>6.0 / 15</strong></td><td><span class="tag blue">Lagging</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="theater" class="panel">
+      <div class="section-head"><span>AI Theater Risk</span></div>
+      <div class="split">
+        <div class="card chart-box"><div class="chart-title">Risk by MAP Service Layer</div><canvas id="theaterChart"></canvas></div>
+        <div class="card">
+          <h3>Theater risk definition</h3>
+          <p>AI Theater occurs when the tool is visible, but the behavioral change infrastructure, decision owner, validation trigger, and audit loop are missing.</p>
+          <div class="insight-list">
+            <div class="insight"><i>1</i><div><b>MAP App</b><span>Goal tracking without verified decision routing creates accountability theater risk.</span></div></div>
+            <div class="insight"><i>2</i><div><b>MAP University</b><span>Content completion does not equal behavior change unless tied to an owner and trigger.</span></div></div>
+            <div class="insight"><i>3</i><div><b>Vital Factors®</b><span>This is the anchor. AI should support it, not replace it.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="entry" class="panel">
+      <div class="section-head"><span>Fractional CXO Entry Point</span></div>
+      <article class="card dark">
+        <span class="tag blue">Primary intervention</span>
+        <h2>Install the decision routing layer between MAP's AI tooling and its Vital Factors® accountability system.</h2>
+        <p>This is a behavioral intelligence and operations governance engagement. The deliverable is a clear architecture for how AI outputs become owned, trusted, acted on, and validated.</p>
+      </article>
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card">
+          <h3>30-Day Proof Sprint</h3>
+          <div class="timeline">
+            <div class="week"><b>Week 1</b><div><h4>HCDG audit</h4><p>Map where AI exists versus where workflow ownership is missing.</p></div></div>
+            <div class="week"><b>Week 2</b><div><h4>DVL measurement</h4><p>Measure how long it takes for insight to become a named action.</p></div></div>
+            <div class="week"><b>Week 3</b><div><h4>DRL prototype</h4><p>Route app outputs to correct decision owners in the accountability rhythm.</p></div></div>
+            <div class="week"><b>Week 4</b><div><h4>AIL baseline</h4><p>Score outputs on action owner, trigger, measurable outcome, and verification.</p></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Outcome measures</h3>
+          <div class="insight-list">
+            <div class="insight"><i>A</i><div><b>Accountability velocity</b><span>Time from insight to named action.</span></div></div>
+            <div class="insight"><i>B</i><div><b>Insight theater rate</b><span>Percent of AI outputs without an action path.</span></div></div>
+            <div class="insight"><i>C</i><div><b>Decision routing score</b><span>Percent routed to the correct owner without manual rescue.</span></div></div>
+            <div class="insight"><i>D</i><div><b>Client ROI signal</b><span>Percent of clients who can name measurable change from the tool.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="panel">
+      <div class="section-head"><span>Source Registry</span></div>
+      <div class="card" style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Source</th><th>Brief usage</th><th>Tier</th></tr></thead>
+          <tbody id="sourceRows"></tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3>Claim protocol</h3>
+        <p>MAP-specific scores are analyst estimates from the public digital footprint and should be validated directly with MAP before external publication. Public viewing of this brief does not grant reuse rights to the underlying diagnostic method.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell"><span>Erwin M. McDonald | AI Adoption Architect | Epoch Frameworks LLC | Fort Worth, TX</span><span>DACR License v2.6 | Proprietary Intelligence Brief | April 2026</span></div>
+  </footer>
+
+  <script>
+    const colors = { peri:'#8e9fd5', peri2:'#6679b7', gold:'#b8962e', amber:'#d4812a', red:'#b84335', green:'#2a776d', ink:'#22282b', muted:'#6c777b', grid:'rgba(37,43,46,0.1)' };
+    Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+    Chart.defaults.color = colors.muted;
+    const charts = {};
+    function switchTab(id) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === id));
+      document.getElementById(id).classList.add('active');
+      setTimeout(initCharts, 80);
+    }
+    function chart(id, config) {
+      if (charts[id]) return;
+      const el = document.getElementById(id);
+      if (!el) return;
+      charts[id] = new Chart(el, config);
+    }
+    function common() { return { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ boxWidth:10, font:{ size:10 } } } }, scales:{ x:{ grid:{ color:colors.grid }, ticks:{ font:{ size:10 } } }, y:{ grid:{ color:colors.grid }, ticks:{ font:{ size:10 } }, beginAtZero:true } } }; }
+    function initCharts() {
+      chart('readinessChart', { type:'line', data:{ labels:['2020','2021','2022','2023','2024','2025','2026E'], datasets:[
+        { label:'Industry avg', data:[22,35,48,62,72,77,83], borderColor:colors.ink, borderDash:[5,4], tension:.36, pointRadius:0 },
+        { label:'Vistage', data:[15,20,28,38,48,55,62], borderColor:colors.amber, tension:.36, pointRadius:0 },
+        { label:'EOS', data:[8,12,18,25,35,42,50], borderColor:colors.gold, tension:.36, pointRadius:0 },
+        { label:'Franklin Covey', data:[20,28,35,42,50,55,60], borderColor:colors.peri2, tension:.36, pointRadius:0 },
+        { label:'MAP estimate', data:[10,12,15,18,22,26,30], borderColor:colors.red, tension:.36, pointRadius:3 }
+      ]}, options: common() });
+      chart('roiChart', { type:'bar', data:{ labels:['S&P 500 avg','Mgmt consulting','MAP estimate'], datasets:[
+        { label:'Positive ROI', data:[12,18,8], backgroundColor:colors.green },
+        { label:'Neutral', data:[38,37,34], backgroundColor:colors.peri },
+        { label:'Negative ROI', data:[50,45,58], backgroundColor:colors.red }
+      ]}, options: common() });
+      chart('radarChart', { type:'radar', data:{ labels:['AI gov','Ops sponsor','Decision layer','Digital footprint','Theater risk'], datasets:[
+        { label:'MAP', data:[1.5,1,1.5,2.5,4], borderColor:colors.red, backgroundColor:'rgba(184,67,53,.13)' },
+        { label:'Vistage', data:[2.5,2,2,3.5,3], borderColor:colors.amber, backgroundColor:'rgba(212,129,42,.1)' },
+        { label:'EOS', data:[2,2.5,3,2,2.5], borderColor:colors.gold, backgroundColor:'rgba(184,150,46,.1)' },
+        { label:'Franklin Covey', data:[2.5,1.5,2,3,3.5], borderColor:colors.peri2, backgroundColor:'rgba(102,121,183,.1)' }
+      ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ boxWidth:10, font:{ size:10 } } } }, scales:{ r:{ min:0, max:5, ticks:{ stepSize:1, backdropColor:'transparent', font:{ size:9 } }, grid:{ color:colors.grid }, pointLabels:{ font:{ size:10 } } } } } });
+      chart('govChart', { type:'bar', data:{ labels:['MAP','Vistage','EOS','Franklin Covey'], datasets:[
+        { label:'AI governance', data:[1.5,2.5,2,2.5], backgroundColor:colors.peri },
+        { label:'Ops sponsor', data:[1,2,2.5,1.5], backgroundColor:colors.gold },
+        { label:'Decision layer', data:[1.5,2,3,2], backgroundColor:colors.green }
+      ]}, options: common() });
+      chart('theaterChart', { type:'bar', data:{ labels:['MAP App','MAP University','Business Planning','Vital Factors'], datasets:[{ label:'Risk estimate %', data:[72,65,55,30], backgroundColor:[colors.red, colors.red, colors.amber, colors.green] }]}, options: common() });
+    }
+    const sources = [
+      ['MAP Consulting public website', 'MAP Digital, MAP App, MAP University, service positioning', 'Public footprint'],
+      ['McKinsey State of AI', 'General AI adoption benchmark context', 'External benchmark'],
+      ['Deloitte State of AI', 'Governance and scale benchmark context', 'External benchmark'],
+      ['PwC AI Agent Survey', 'Financial impact and governance maturity context', 'External benchmark'],
+      ['Vistage public website', 'Competitor AI trend and advisory positioning', 'Public footprint'],
+      ['EOS Worldwide public website', 'Competitor operating model comparison', 'Public footprint'],
+      ['Franklin Covey public website', 'Digital learning and leadership comparison', 'Public footprint']
+    ];
+    document.getElementById('sourceRows').innerHTML = sources.map(s => `<tr><td><strong>${s[0]}</strong></td><td>${s[1]}</td><td><span class="tag blue">${s[2]}</span></td></tr>`).join('');
+    initCharts();
+  </script>
+</body>
+</html>
