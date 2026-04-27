@@ -1,80 +1,195 @@
-# MAP Management Consulting · AI Intelligence Brief
+# MAP Management Consulting  
+## Execution Intelligence Brief
 
-**Fractional CXO Pre-Engagement Intelligence · April 2026**
+```
 
-> Live brief: [emcdo411.github.io/map-management-consulting-ceo-brief](https://emcdo411.github.io/map-management-consulting-ceo-brief)
+AI Adoption Architect v6.6  ×  MOC v4.7  ×  Fractional CXO Lens
+Epoch Frameworks LLC · Pre-Engagement Intelligence · April 2026
 
----
+```
 
-## Overview
-
-This repository hosts a boardroom-grade AI readiness intelligence brief on **MAP Management Consulting**, produced as a pre-engagement diagnostic for a CEO-level discussion.
-
-The brief applies the **AI Adoption Architect v6.6** and **Marketing Ops Catalyst v4.7** frameworks from the McDonald Suite (Epoch Frameworks LLC) to assess MAP's AI governance maturity, competitive positioning, and highest-leverage Fractional CXO entry point.
+> Live Brief → https://emcdo411.github.io/map-management-consulting-ceo-brief
 
 ---
 
-## What's Inside the Brief
+## I. Entry Position
 
-| Tab | Content |
-|---|---|
-| **Executive Summary** | HCDG verdict, KPI scorecard, Claims vs. Footprint analysis, Industry benchmarks |
-| **AI Readiness** | 2020–2026 adoption trajectory, AI ROI distribution, Layer classification (Marketing / Ops / Governance) |
-| **Competitor Intel** | Vistage, EOS Worldwide, Franklin Covey — radar chart + card analysis |
-| **Governance Scorecard** | 3-dimension gap table, grouped bar chart, threshold analysis |
-| **AI Theater Risk** | Service line risk detection by MAP App, MAP University, Vital Factors®, Business Planning |
-| **Entry Point** | 30-Day POC, Day 90 measurable outcomes, Why MAP / Why Now |
-| **Sources** | Full citation registry with ESIL v1.0 claim classification |
+MAP does not have an execution problem.
 
----
+MAP has a **visibility problem at scale**.
 
-## Key Findings
+> The system works.  
+> The question is whether it is **continuously provable**.
 
-- **Overall HCDG Verdict: CONDITIONAL** — AI exists as a marketing layer only
-- **AI Governance Score: 1.5 / 5** — No documented framework found (FAIL)
-- **Ops Sponsor Evidence: 1.0 / 5** — No named AI ops executive (ABSENT)
-- **AI Theater Risk: HIGH** — MAP App and MAP University flagged
-- **DVL Velocity Class: LOW** — No decision routing architecture detected
-- MAP scores **4.0 / 15** on the composite governance scorecard — lowest in its peer set, representing the **highest governance opportunity** in the management consulting sector
+This brief does not evaluate MAP’s methodology.
+
+It evaluates whether:
+
+```
+
+Insight → Ownership → Action → Verification
+
+```
+
+exists as a **closed-loop system**, or remains partially human-enforced.
 
 ---
 
-## Framework Attribution
+## II. Core Lens
 
-Built on the McDonald Suite (McDonald, 2026) under DACR License v2.6:
+MAP’s advantage:
 
-- **AI Adoption Architect v6.6** — HCDG, DVL, Layer diagnostic
-- **Marketing Ops Catalyst v4.7** — DRL (Decision Routing Layer), AIL (Actionable Insight Layer)
-- **Fractional CXO Practice Builder v2.6** — HCDG, DVL, RIL, OLR, CRL gate logic
-- **EBT Framework v2.6** — Objectivity Laundering detection, ESIL claim classification
+```
 
----
+Behavioral Accountability System (Proven)
 
-## Data Sources
+```
 
-All findings are based on **public digital footprint signals only** — not MAP self-reported data. Sources include:
+Emerging layer:
 
-- mapconsulting.com
-- McKinsey State of AI 2024–2025
-- Deloitte State of AI 2026
-- PwC AI Agent Survey 2026
-- BCG AI Value at Scale 2025
-- Gartner AI Project Abandonment 2026
-- Forvis Mazars / FERF 2026
-- MCA Member Survey January 2026
-- Vistage.com AI Trends 2026
+```
 
-MAP-specific scores are analyst estimates and should be validated with MAP directly before external citation.
+Digital + AI Signal Layer (Unclear linkage)
+
+```
 
 ---
 
-## About
+## III. Primary Tension
 
-**Erwin M. McDonald**  
+MAP defines what matters.
+
+The open question:
+
+> Does the system ensure it happens, without manual reinforcement?
+
+---
+
+## IV. Observed Pattern (Public Footprint Only)
+
+| Layer | Status | Signal |
+|------|--------|--------|
+| Accountability Model | Strong | Longstanding, structured, repeatable |
+| Digital Layer | Present | MAP App, MAP University |
+| Decision Routing | Unclear | No explicit ownership path |
+| Trigger Logic | Implied | Cadence-driven vs system-triggered |
+| Verification Loop | Limited | Outcome visibility not externally demonstrated |
+
+---
+
+## V. Interpretation
+
+This creates a familiar pattern:
+
+```
+
+Strong System
+
+* Emerging Signals
+
+- Incomplete Enforcement Layer
+  = Execution Visibility Gap
+
+```
+
+---
+
+## VI. Why This Matters
+
+Most firms attempt to use AI to create discipline.
+
+MAP already has discipline.
+
+The leverage point is different:
+
+> Not creation  
+> → **Enforcement and proof**
+
+---
+
+## VII. Repository Structure (Functional)
+
+This repository is not a report.
+
+It is a **decision system**.
+
+```
+
+/client-briefs/        → CEO-level narrative
+/prove-me-wrong/       → Assumption challenge layer
+/sprint/               → 30-day proof engagement
+/frameworks/           → Diagnostic architecture (HCDG, DVL, DRL, AIL)
+/operator-workflows/   → System → signal translation
+/governance/           → Ownership, trigger, verification
+/gtm-strategy/         → Category + revenue logic
+/evidence/             → Public footprint validation
+
+```
+
+---
+
+## VIII. Engagement Logic
+
+The purpose of this repository is singular:
+
+> Determine whether MAP benefits from an execution intelligence layer.
+
+---
+
+### Validation Path
+
+1. Review framing  
+2. Challenge assumptions → `/prove-me-wrong/`  
+3. Validate with contained intervention → `/sprint/`
+
+---
+
+## IX. Category Frame
+
+This work introduces a structural shift:
+
+```
+
+Accountability → Accountability Intelligence
+
+```
+
+Where:
+
+- Ownership is explicit  
+- Triggers are system-defined  
+- Actions are measurable  
+- Outcomes are verified  
+
+---
+
+## X. Constraint Acknowledgment
+
+All findings are based on:
+
+```
+
+Public Digital Footprint Only
+
+```
+
+No internal access  
+No client data  
+No proprietary system visibility  
+
+---
+
+## XI. Author
+
+Erwin M. McDonald  
 AI Adoption Architect · Fractional CXO  
-Founder, Behavioral Intelligence Research (BIR) · Epoch Frameworks LLC  
-Fort Worth, Texas · [github.com/emcdo411](https://github.com/emcdo411)
+Epoch Frameworks LLC · Fort Worth, Texas  
 
 ---
 
-*DACR License v2.6 · Proprietary Intelligence · Epoch Frameworks LLC · April 2026*
+## XII. License Boundary
+
+DACR License v2.6  
+Presentation Layer Only  
+
+> Diagnostic models, scoring systems, and framework logic are not included.
