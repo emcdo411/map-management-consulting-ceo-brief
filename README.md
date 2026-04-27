@@ -1,9 +1,16 @@
 # MAP Management Consulting  
 ## Execution Intelligence Brief
 
+![Status](https://img.shields.io/badge/status-executive_brief-active-2a776d)
+![Lens](https://img.shields.io/badge/lens-AI_Adoption_Architect_v6.6-8e9fd5)
+![Framework](https://img.shields.io/badge/framework-MOC_v4.7-6679b7)
+![Model](https://img.shields.io/badge/model-Fractional_CXO-1f6feb)
+![Category](https://img.shields.io/badge/category-Accountability_Intelligence-b8962e)
+![License](https://img.shields.io/badge/license-DACR_v2.6-171c1e)
+
 ```
 
-AI Adoption Architect v6.6  ×  MOC v4.7  ×  Fractional CXO Lens
+AI Adoption Architect v6.6  ×  Marketing Ops Catalyst v4.7
 Epoch Frameworks LLC · Pre-Engagement Intelligence · April 2026
 
 ```
@@ -16,10 +23,14 @@ Epoch Frameworks LLC · Pre-Engagement Intelligence · April 2026
 
 MAP does not have an execution problem.
 
-MAP has a **visibility problem at scale**.
+MAP has a **visibility constraint at scale**.
 
-> The system works.  
-> The question is whether it is **continuously provable**.
+```
+
+The system works.
+The question is whether it is continuously provable.
+
+```
 
 This brief does not evaluate MAP’s methodology.
 
@@ -36,6 +47,9 @@ exists as a **closed-loop system**, or remains partially human-enforced.
 ---
 
 ## II. Core Lens
+
+![System](https://img.shields.io/badge/system-Behavioral_Accountability-2a776d)
+![Signal](https://img.shields.io/badge/layer-Digital_%2B_AI_Signals-8e9fd5)
 
 MAP’s advantage:
 
@@ -59,13 +73,14 @@ Digital + AI Signal Layer (Unclear linkage)
 
 MAP defines what matters.
 
-The open question:
-
 > Does the system ensure it happens, without manual reinforcement?
 
 ---
 
 ## IV. Observed Pattern (Public Footprint Only)
+
+![Source](https://img.shields.io/badge/source-public_footprint_only-6c777b)
+![Confidence](https://img.shields.io/badge/confidence-directional_only-6c777b)
 
 | Layer | Status | Signal |
 |------|--------|--------|
@@ -79,7 +94,7 @@ The open question:
 
 ## V. Interpretation
 
-This creates a familiar pattern:
+![Pattern](https://img.shields.io/badge/pattern-execution_gap-b84335)
 
 ```
 
@@ -96,32 +111,29 @@ Strong System
 
 ## VI. Why This Matters
 
+![Insight](https://img.shields.io/badge/insight-not_creation_but_enforcement-8e9fd5)
+
 Most firms attempt to use AI to create discipline.
 
 MAP already has discipline.
 
-The leverage point is different:
-
-> Not creation  
-> → **Enforcement and proof**
+> The leverage point is enforcement and proof.
 
 ---
 
-## VII. Repository Structure (Functional)
+## VII. Repository Structure
 
-This repository is not a report.
-
-It is a **decision system**.
+![Design](https://img.shields.io/badge/design-decision_system-2a776d)
 
 ```
 
-/client-briefs/        → CEO-level narrative
+/client-briefs/        → CEO narrative layer
 /prove-me-wrong/       → Assumption challenge layer
 /sprint/               → 30-day proof engagement
-/frameworks/           → Diagnostic architecture (HCDG, DVL, DRL, AIL)
+/frameworks/           → HCDG, DVL, DRL, AIL architecture
 /operator-workflows/   → System → signal translation
 /governance/           → Ownership, trigger, verification
-/gtm-strategy/         → Category + revenue logic
+/gtm-strategy/         → Category + revenue expansion
 /evidence/             → Public footprint validation
 
 ```
@@ -130,23 +142,21 @@ It is a **decision system**.
 
 ## VIII. Engagement Logic
 
-The purpose of this repository is singular:
+![Flow](https://img.shields.io/badge/flow-validate_before_scale-1f6feb)
 
-> Determine whether MAP benefits from an execution intelligence layer.
+```
 
----
+1. Review framing
+2. Challenge assumptions → /prove-me-wrong/
+3. Validate through contained sprint → /sprint/
 
-### Validation Path
-
-1. Review framing  
-2. Challenge assumptions → `/prove-me-wrong/`  
-3. Validate with contained intervention → `/sprint/`
+```
 
 ---
 
 ## IX. Category Frame
 
-This work introduces a structural shift:
+![Category](https://img.shields.io/badge/category-Accountability_Intelligence-b8962e)
 
 ```
 
@@ -165,7 +175,7 @@ Where:
 
 ## X. Constraint Acknowledgment
 
-All findings are based on:
+![Boundary](https://img.shields.io/badge/boundary-public_data_only-6c777b)
 
 ```
 
@@ -173,23 +183,29 @@ Public Digital Footprint Only
 
 ```
 
-No internal access  
-No client data  
-No proprietary system visibility  
+- No internal system access  
+- No client data  
+- No proprietary visibility  
 
 ---
 
 ## XI. Author
 
-Erwin M. McDonald  
+**Erwin M. McDonald**  
 AI Adoption Architect · Fractional CXO  
 Epoch Frameworks LLC · Fort Worth, Texas  
+
+GitHub → https://github.com/emcdo411
 
 ---
 
 ## XII. License Boundary
 
+![License](https://img.shields.io/badge/license-DACR_v2.6-171c1e)
+
 DACR License v2.6  
 Presentation Layer Only  
 
 > Diagnostic models, scoring systems, and framework logic are not included.
+
+
