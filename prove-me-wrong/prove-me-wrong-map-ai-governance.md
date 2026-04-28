@@ -42,7 +42,7 @@ It is a **challenge framework** — upgraded with live market intelligence, MOC 
 
 ---
 
-## 📡 ESIL — What the External Signals Say Before Any Conversation Starts
+##  ESIL — What the External Signals Say Before Any Conversation Starts
 
 *ESIL (External Signal Intelligence Layer) fires before every scored claim. Three verified forcing functions — regulatory, academic, market.*
 
@@ -81,7 +81,7 @@ Absence of positioning is itself a signal.
 
 ---
 
-## 🔬 DARE Layer Diagnostic — The Four Adoption Dimensions
+##  DARE Layer Diagnostic — The Four Adoption Dimensions
 
 *DARE (Data · Agility · Risks · Evolution) scores MAP's AI adoption maturity 0–100.*
 *Benchmark: MIT GenAI Divide 2025 — 95% zero ROI. Only 5% generating real financial impact.*
